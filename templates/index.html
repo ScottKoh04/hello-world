@@ -1,19 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTU Math Course Planner</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTU Math Course Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>NTU Mathematics Course Planner</h1>
-        <p>Plan your remaining semesters</p>
-    </header>
 
-    <main>
-        <p>Course planner coming soon.</p>
-    </main>
+<header>
+  <div class="header-inner">
+    <div>
+      <h1>NTU Mathematics Course Planner</h1>
+      <p>Year 3 &amp; 4 &mdash; 4 remaining semesters</p>
+    </div>
+    <div class="au-summary" id="auSummary">
+      <span>Total planned: <strong id="totalAU">0</strong> AU</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Timetable grid -->
+  <section class="timetable">
+    <h2>Semester Planner</h2>
+    <p class="hint">Drag courses from the panel on the right into a semester.</p>
+    <div class="grid">
+      <div class="semester-col" data-sem="y3s1">
+        <div class="sem-header">
+          <span class="sem-label">Year 3 Sem 1</span>
+          <span class="sem-period">Aug – Dec 2025</span>
+          <span class="sem-badge">S1</span>
+        </div>
+        <div class="drop-zone" id="drop-y3s1" data-sem="y3s1" data-semnum="1"></div>
+        <div class="sem-footer">
+          <span class="au-count">Planned: <strong class="col-au" id="au-y3s1">0</strong> AU</span>
+        </div>
+      </div>
+
+      <div class="semester-col" data-sem="y3s2">
+        <div class="sem-header">
+          <span class="sem-label">Year 3 Sem 2</span>
+          <span class="sem-period">Jan – May 2026</span>
+          <span class="sem-badge">S2</span>
+        </div>
+        <div class="drop-zone" id="drop-y3s2" data-sem="y3s2" data-semnum="2"></div>
+        <div class="sem-footer">
+          <span class="au-count">Planned: <strong class="col-au" id="au-y3s2">0</strong> AU</span>
+        </div>
+      </div>
+
+      <div class="semester-col" data-sem="y4s1">
+        <div class="sem-header">
+          <span class="sem-label">Year 4 Sem 1</span>
+          <span class="sem-period">Aug – Dec 2026</span>
+          <span class="sem-badge">S1</span>
+        </div>
+        <div class="drop-zone" id="drop-y4s1" data-sem="y4s1" data-semnum="1"></div>
+        <div class="sem-footer">
+          <span class="au-count">Planned: <strong class="col-au" id="au-y4s1">0</strong> AU</span>
+        </div>
+      </div>
+
+      <div class="semester-col" data-sem="y4s2">
+        <div class="sem-header">
+          <span class="sem-label">Year 4 Sem 2</span>
+          <span class="sem-period">Jan – May 2027</span>
+          <span class="sem-badge">S2</span>
+        </div>
+        <div class="drop-zone" id="drop-y4s2" data-sem="y4s2" data-semnum="2"></div>
+        <div class="sem-footer">
+          <span class="au-count">Planned: <strong class="col-au" id="au-y4s2">0</strong> AU</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course panel -->
+  <aside class="course-panel">
+    <h2>Available Courses</h2>
+
+    <div class="legend">
+      <span class="legend-item available">Can take now</span>
+      <span class="legend-item locked">Prerequisites needed</span>
+      <span class="legend-item required">Required</span>
+      <span class="legend-item fyp">FYP</span>
+    </div>
+
+    <input type="text" id="search" placeholder="Search by code or name…" autocomplete="off">
+
+    <div class="track-filters" id="trackFilters">
+      <button class="filter-btn active" data-track="All">All</button>
+      <button class="filter-btn" data-track="Core">Required</button>
+      <button class="filter-btn" data-track="FYP">FYP</button>
+      <button class="filter-btn" data-track="Pure Mathematics">Pure Math</button>
+      <button class="filter-btn" data-track="Applied Mathematics">Applied</button>
+      <button class="filter-btn" data-track="Data Science & Statistics">Data &amp; Stats</button>
+      <button class="filter-btn" data-track="Finance & Risk">Finance</button>
+      <button class="filter-btn" data-track="Computer Science">CS</button>
+    </div>
+
+    <div class="course-list" id="courseList">
+      <p class="loading">Loading courses…</p>
+    </div>
+  </aside>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

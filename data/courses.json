@@ -1,0 +1,474 @@
+{
+  "completed": [
+    "MH1100", "MH1200", "MH1300", "PS0001", "CC0002", "CC0003",
+    "MH1101", "MH1201", "MH1301", "MH1403", "CC0001", "CC0005",
+    "MH2100", "MH2500", "MH3100", "ML0004", "CC0006",
+    "MH2510", "MH3110", "MH3600", "CC0007", "PS0002"
+  ],
+  "courses": [
+    {
+      "code": "HW0218",
+      "name": "Communication Across the Sciences",
+      "au": 2,
+      "semesters": [1],
+      "prerequisites": [],
+      "tracks": ["Core"],
+      "type": "required"
+    },
+    {
+      "code": "MH4916",
+      "name": "Final Year Project",
+      "au": 8,
+      "semesters": [1, 2],
+      "prerequisites": [],
+      "tracks": ["FYP"],
+      "type": "fyp",
+      "note": "Mutually exclusive with MH4915. Min CGPA 3.5."
+    },
+    {
+      "code": "MH4915",
+      "name": "Group Final Year Project",
+      "au": 8,
+      "semesters": [1, 2],
+      "prerequisites": [],
+      "tracks": ["FYP"],
+      "type": "fyp",
+      "note": "Mutually exclusive with MH4916. Min CGPA 3.5."
+    },
+    {
+      "code": "MH2220",
+      "name": "Algebra I",
+      "au": 3,
+      "semesters": [2],
+      "prerequisites": [["MH1200", "MH1300"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective",
+      "note": "Mutually exclusive with MH2200."
+    },
+    {
+      "code": "MH3101",
+      "name": "Complex Analysis",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1101", "MH2100"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3210",
+      "name": "Number Theory",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1300"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3220",
+      "name": "Algebra II",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1201", "MH2220"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3300",
+      "name": "Graph Theory",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1201", "MH1301"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3320",
+      "name": "Dynamical System Theory with Chaos and Fractals",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH1201", "MH2100"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4100",
+      "name": "Real Analysis II",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2100", "MH3100"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4220",
+      "name": "Algebra III",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH1201", "MH3220"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective",
+      "note": "Mutually exclusive with MH4200."
+    },
+    {
+      "code": "MH4300",
+      "name": "Combinatorics",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1101", "MH1201", "MH1301"]],
+      "tracks": ["Pure Mathematics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4301",
+      "name": "Set Theory and Logic",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH1300", "MH3100"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4302",
+      "name": "Theory of Computing",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH1300", "MH1301", "MH1403"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4310",
+      "name": "Coding Theory",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2200", "MH1301"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective",
+      "note": "Requires MH2200 (Groups and Symmetry), not MH2220."
+    },
+    {
+      "code": "MH4311",
+      "name": "Cryptography",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1301"]],
+      "tracks": ["Pure Mathematics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4600",
+      "name": "Algebraic Topology",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH3200", "MH3600"], ["MH2220", "MH3600"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4601",
+      "name": "Differential Geometry",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH3100", "MH3600"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH7002",
+      "name": "Discrete Methods",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1201", "MH1301"]],
+      "tracks": ["Pure Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3400",
+      "name": "Algorithms for the Real World",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH1201", "MH1301", "MH1403", "MH2500"]],
+      "tracks": ["Applied Mathematics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3401",
+      "name": "Signal and Noise in Biology",
+      "au": 3,
+      "semesters": [2],
+      "prerequisites": [["MH1100", "MH1101"]],
+      "tracks": ["Applied Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3700",
+      "name": "Numerical Analysis I",
+      "au": 3,
+      "semesters": [1, 2],
+      "prerequisites": [["MH1200", "MH1201"]],
+      "tracks": ["Applied Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3701",
+      "name": "Basic Optimization",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH1201"]],
+      "tracks": ["Applied Mathematics", "Finance & Risk", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4110",
+      "name": "Partial Differential Equations",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH3100", "MH3110"]],
+      "tracks": ["Applied Mathematics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4700",
+      "name": "Numerical Analysis II",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH3700", "MH3110"]],
+      "tracks": ["Applied Mathematics", "Finance & Risk", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4701",
+      "name": "Mathematical Programming",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2100", "MH3701"]],
+      "tracks": ["Applied Mathematics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4712",
+      "name": "Geometric Methods in Mathematical Physics",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2100"]],
+      "tracks": ["Applied Mathematics", "Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3510",
+      "name": "Regression Analysis",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2500", "MH2510"]],
+      "tracks": ["Data Science & Statistics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3511",
+      "name": "Data Analysis with Computer",
+      "au": 3,
+      "semesters": [2],
+      "prerequisites": [["MH2500"]],
+      "tracks": ["Data Science & Statistics", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3512",
+      "name": "Stochastic Processes",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500"]],
+      "tracks": ["Data Science & Statistics", "Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3515",
+      "name": "Stochastic Geometry",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2500"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH3520",
+      "name": "Mathematics of Deep Learning",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2100", "MH2510", "MH3600", "PS0001"]],
+      "tracks": ["Data Science & Statistics", "Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4500",
+      "name": "Time Series Analysis",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2500", "MH2510", "MH3510"]],
+      "tracks": ["Data Science & Statistics", "Finance & Risk", "Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4501",
+      "name": "Multivariate Analysis",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2500", "MH3510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4510",
+      "name": "Statistical Learning and Data Mining",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500", "MH2510", "MH3510", "MH3511"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4511",
+      "name": "Sampling and Survey",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500", "MH2510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4512",
+      "name": "Clinical Trials",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH3510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4513",
+      "name": "Survival Analysis",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500", "MH3510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4515",
+      "name": "Applied Bayesian Statistics",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2500", "MH3510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4516",
+      "name": "Applied Categorical Data Analysis",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2500", "MH3510"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4517",
+      "name": "Data Applications in Natural Sciences",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH1403"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4520",
+      "name": "High Dimensional Probability",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH1201", "MH2500", "MH3100"]],
+      "tracks": ["Data Science & Statistics", "Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4521",
+      "name": "Reinforcement Learning",
+      "au": 4,
+      "semesters": [1, 2],
+      "prerequisites": [["MH2500", "MH3512"]],
+      "tracks": ["Data Science & Statistics"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4320",
+      "name": "Computational Economics",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH1200", "MH2500"]],
+      "tracks": ["Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4514",
+      "name": "Financial Mathematics",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2500", "MH3512"]],
+      "tracks": ["Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4518",
+      "name": "Simulation Techniques in Finance",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500", "MH3511"]],
+      "tracks": ["Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4519",
+      "name": "Financial Econometrics",
+      "au": 4,
+      "semesters": [2],
+      "prerequisites": [["MH2500"]],
+      "tracks": ["Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "MH4702",
+      "name": "Probabilistic Methods in OR",
+      "au": 4,
+      "semesters": [1],
+      "prerequisites": [["MH2500", "MH3512"], ["MH2500", "MH3701"]],
+      "tracks": ["Finance & Risk"],
+      "type": "elective"
+    },
+    {
+      "code": "SC3010",
+      "name": "Computer Security",
+      "au": 3,
+      "semesters": [1, 2],
+      "prerequisites": [],
+      "tracks": ["Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "SC4010",
+      "name": "Software Security",
+      "au": 3,
+      "semesters": [1, 2],
+      "prerequisites": [["SC3010"]],
+      "tracks": ["Computer Science"],
+      "type": "elective"
+    },
+    {
+      "code": "SC4013",
+      "name": "Applied Security",
+      "au": 3,
+      "semesters": [1, 2],
+      "prerequisites": [],
+      "tracks": ["Computer Science"],
+      "type": "elective"
+    }
+  ]
+}

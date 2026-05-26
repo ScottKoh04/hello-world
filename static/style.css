@@ -1,26 +1,435 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: sans-serif;
-    background: #f5f5f5;
-    color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+/* ── Header ── */
 header {
-    background: #003d7c;
-    color: white;
-    padding: 1.5rem 2rem;
+  background: #003d7c;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  flex-shrink: 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 header p {
-    margin-top: 0.25rem;
-    opacity: 0.8;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 2px;
 }
 
+.au-summary {
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.15);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+/* ── Main layout ── */
 main {
-    padding: 2rem;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* ── Timetable ── */
+.timetable {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 1.5rem;
+  overflow: hidden;
+}
+
+.timetable h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #003d7c;
+  margin-bottom: 0.2rem;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.semester-col {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.sem-header {
+  background: #003d7c;
+  color: white;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.sem-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.sem-period {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+.sem-badge {
+  display: inline-block;
+  margin-top: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.drop-zone {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: background 0.15s;
+}
+
+.drop-zone.drag-over {
+  background: #eff6ff;
+  outline: 2px dashed #3b82f6;
+  outline-offset: -4px;
+  border-radius: 6px;
+}
+
+.drop-zone:empty::after {
+  content: "Drop courses here";
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  margin: auto;
+  text-align: center;
+  padding: 1rem;
+  display: block;
+}
+
+.sem-footer {
+  padding: 0.4rem 0.75rem;
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.au-count {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.col-au {
+  color: #003d7c;
+}
+
+/* ── Placed course card (in timetable) ── */
+.placed-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #003d7c;
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.3rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.placed-card.type-required { border-left-color: #3b82f6; }
+.placed-card.type-fyp      { border-left-color: #8b5cf6; }
+.placed-card.type-elective { border-left-color: #003d7c; }
+
+.placed-info strong {
+  display: block;
+  font-size: 0.75rem;
+  color: #003d7c;
+}
+
+.placed-info span {
+  font-size: 0.68rem;
+  color: #64748b;
+}
+
+.placed-au {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0 2px;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  color: #ef4444;
+}
+
+/* ── Course panel ── */
+.course-panel {
+  width: 300px;
+  flex-shrink: 0;
+  background: white;
+  border-left: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 0.75rem;
+}
+
+.course-panel h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #003d7c;
+  flex-shrink: 0;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.legend-item {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.legend-item.available { background: #dcfce7; color: #15803d; }
+.legend-item.locked    { background: #fef3c7; color: #92400e; }
+.legend-item.required  { background: #dbeafe; color: #1d4ed8; }
+.legend-item.fyp       { background: #ede9fe; color: #6d28d9; }
+
+/* ── Search ── */
+#search {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  outline: none;
+  flex-shrink: 0;
+}
+
+#search:focus {
+  border-color: #003d7c;
+  box-shadow: 0 0 0 2px rgba(0, 61, 124, 0.12);
+}
+
+/* ── Track filters ── */
+.track-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.filter-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover { background: #e2e8f0; }
+
+.filter-btn.active {
+  background: #003d7c;
+  color: white;
+  border-color: #003d7c;
+}
+
+/* ── Course list ── */
+.course-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.loading {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ── Course card (draggable) ── */
+.course-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.15s, opacity 0.15s;
+  position: relative;
+}
+
+.course-card:active { cursor: grabbing; }
+
+.course-card.available {
+  border-left: 3px solid #16a34a;
+  background: #f0fdf4;
+}
+
+.course-card.locked {
+  border-left: 3px solid #d97706;
+  background: #fffbeb;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.course-card.type-required {
+  border-left: 3px solid #2563eb;
+  background: #eff6ff;
+}
+
+.course-card.type-fyp {
+  border-left: 3px solid #7c3aed;
+  background: #f5f3ff;
+}
+
+.course-card.placed {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.course-card:hover:not(.locked):not(.placed) {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.card-code {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.card-badges {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-au   { background: #e2e8f0; color: #475569; }
+.badge-s1   { background: #bfdbfe; color: #1e40af; }
+.badge-s2   { background: #bbf7d0; color: #166534; }
+.badge-both { background: #e9d5ff; color: #6d28d9; }
+
+.card-name {
+  font-size: 0.72rem;
+  color: #475569;
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+.card-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.track-tag {
+  font-size: 0.58rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.card-note {
+  font-size: 0.62rem;
+  color: #b45309;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.lock-msg {
+  font-size: 0.62rem;
+  color: #92400e;
+  margin-top: 4px;
 }
